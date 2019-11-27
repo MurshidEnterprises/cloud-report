@@ -16,6 +16,7 @@ export class CloudTrailsLogValidationAnalyzer extends BaseAnalyzer {
         cloud_trails_log_validation.why = `Cloud trails helps understand who did what so
         enabling log file validation keep their integrity intact`;
         cloud_trails_log_validation.recommendation = "Recommended to enable log file validation for all cloud trails";
+        cloud_trails_log_validation.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allTrails) {
             const regionTrails = allTrails[region];

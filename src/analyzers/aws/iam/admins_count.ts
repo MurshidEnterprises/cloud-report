@@ -14,6 +14,7 @@ export class AdminCountAnalyzer extends BaseAnalyzer {
         admin_count.why = `It is hard to manage security goals
         when there too many admins as chances of mistakes increases`;
         admin_count.recommendation = "Recommended to have 2-3 admins per account";
+        admin_count.benchmark = ['all','cis'];
         const analysis: IResourceAnalysisResult = {};
         analysis.resource = { adminUsers };
         analysis.resourceSummary = {

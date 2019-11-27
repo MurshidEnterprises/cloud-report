@@ -17,6 +17,7 @@ export class CertificatesExpiryAnalyzer extends BaseAnalyzer {
         certificates_expiry.why = "Expired certificates can make services inaccessible for your customers.";
         certificates_expiry.recommendation = `Recommended to enable AutoRenew option or
         renew manually before certificates expiry`;
+        certificates_expiry.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allCertificates) {
             allRegionsAnalysis[region] = [];

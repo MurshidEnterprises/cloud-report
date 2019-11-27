@@ -19,6 +19,7 @@ export class EC2InstanceTerminationProtectionAnalyzer extends BaseAnalyzer {
         can be lost when they are without termination protection`;
         termination_protection_enabled.recommendation = `Recommended to enable termination protection
         for all production critical instances`;
+        termination_protection_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

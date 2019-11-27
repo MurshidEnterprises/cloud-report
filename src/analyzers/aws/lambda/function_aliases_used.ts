@@ -19,6 +19,7 @@ export class LambdaFunctionAliasesUsageAnalyzer extends BaseAnalyzer {
         multiple aliases so that we can perform A/B testing and smoothly migrate applications.`;
         function_aliases_used.recommendation = `Recommended to use aliasing while
         deploying major changes to the Lambda functions`;
+        function_aliases_used.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allFunctionAliases) {
             const regionFunctionAliases = allFunctionAliases[region];

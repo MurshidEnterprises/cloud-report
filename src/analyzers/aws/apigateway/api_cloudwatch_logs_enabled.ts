@@ -17,6 +17,7 @@ export class ApiLogsAnalyzer extends BaseAnalyzer {
         api_logs_enabled.what = "Are CloudWatch logs enabled for Apis?";
         api_logs_enabled.why = "It is important to set logs for Apis for debugging API issues";
         api_logs_enabled.recommendation = "Recommended to set logs for all Apis";
+        api_logs_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allApis) {
             const regionApis = allApis[region];

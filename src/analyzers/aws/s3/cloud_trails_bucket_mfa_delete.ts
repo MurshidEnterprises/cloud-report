@@ -15,6 +15,7 @@ export class CloudTrailsBucketMFADeleteAnalyzer extends BaseAnalyzer {
         cloud_trails_bucket_mfa_delete.why = `Cloud trails deletes should be MFA
         enabled so that attacker won't able to delete them`;
         cloud_trails_bucket_mfa_delete.recommendation = "Recommended to enable MFA for deleting Cloud Trails";
+        cloud_trails_bucket_mfa_delete.benchmark = ['all'];
         const allBucketsAnalysis: IResourceAnalysisResult[] = [];
         const cloudTrailBuckets = this.getCloudTrailBuckets(allCloudTrails);
         for (const bucketName of cloudTrailBuckets) {

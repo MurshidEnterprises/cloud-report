@@ -18,6 +18,7 @@ export class FieldLevelEncrytionAnalyzer extends BaseAnalyzer {
         field_level_encryption_enabled.why = `It is important, in order to help protect sensitive data like credit 
         card numbers or social security numbers, and to help protect your data across application services.`;
         field_level_encryption_enabled.recommendation = "Recommended to enable  field level encryption for all distributions.";
+        field_level_encryption_enabled.benchmark = ['all'];
         const allFieldLevelEncryptionAnalysis: IResourceAnalysisResult[] = [];
 
         for (const field_level_encryption_Id in allFieldLevelEncryptionConfigs) {

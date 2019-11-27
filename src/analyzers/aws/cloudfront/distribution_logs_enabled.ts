@@ -18,6 +18,7 @@ export class DistributionLogsAnalyzer extends BaseAnalyzer {
         distributions_logs_enabled.why = `It is important to enabled access logs for the distributions to understand
         access patterns and come with better caching strategies.`;
         distributions_logs_enabled.recommendation = "Recommended to enable access logs for all distributions.";
+        distributions_logs_enabled.benchmark = ['all'];
         const allDistributionsAnalysis: IResourceAnalysisResult[] = [];
         for (const distributionId in allDistributionConfigs) {
             const distribution = allDistributionConfigs[distributionId];

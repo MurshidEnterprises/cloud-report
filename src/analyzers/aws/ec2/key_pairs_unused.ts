@@ -16,6 +16,7 @@ export class KeyPairsUnusedAnalyzer extends BaseAnalyzer {
         key_pairs_unused.what = "Are there any key pairs unused?";
         key_pairs_unused.why = "Unused key pairs causes confusion and allows to make mistakes";
         key_pairs_unused.recommendation = "Recommended delete unused key pairs";
+        key_pairs_unused.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

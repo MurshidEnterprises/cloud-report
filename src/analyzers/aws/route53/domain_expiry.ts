@@ -14,6 +14,7 @@ export class DomainsExpiryAnalyzer extends BaseAnalyzer {
         domains_expiry.why = "When domains get expired, someone may claim them so it is import to keep an eye on them";
         domains_expiry.recommendation = `It is recommended to enable AutoRenewable to automatically renew the domain or
         we can periodically check the expiry and renew it manually`;
+        domains_expiry.benchmark = ['all'];
         const allDomainAnalysis: IResourceAnalysisResult[] = [];
 
         for (const domain of allDomains) {

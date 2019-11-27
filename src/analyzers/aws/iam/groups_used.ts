@@ -17,6 +17,7 @@ export class GroupsAnalyzerAnalyzer extends BaseAnalyzer {
         iam_groups_used.why = `When we use IAM groups to grant access to
         IAM users then it will be easy to manage access control`;
         iam_groups_used.recommendation = "Recommended to use IAM groups for granting access to the users";
+        iam_groups_used.benchmark = ['all','cis'];
         const groupsByUser = this.mapGroupsByUser(allGroupUsers);
         const allUserAnalysis: IResourceAnalysisResult[] = [];
         for (const user of allUsers) {

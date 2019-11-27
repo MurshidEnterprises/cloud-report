@@ -13,6 +13,7 @@ export class DomainsTransferLockAnalyzer extends BaseAnalyzer {
         domains_transfer_lock.why = `It is important to enable transfer lock
         for domains as it protects someone from claiming them`;
         domains_transfer_lock.recommendation = "Recommended to enable transfer lock for all your domains";
+        domains_transfer_lock.benchmark = ['all'];
         const allDomainAnalysis: IResourceAnalysisResult[] = [];
 
         for (const domain of allDomains) {

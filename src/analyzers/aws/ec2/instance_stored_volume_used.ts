@@ -18,6 +18,7 @@ export class InstanceStoreVolumesAnalyzer extends BaseAnalyzer {
         in case the instance is failed or terminated`;
         instance_stored_volume_used.recommendation = `Recommended to use EBS backed volumes
         as they can help us to recover data when instance has failed`;
+        instance_stored_volume_used.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

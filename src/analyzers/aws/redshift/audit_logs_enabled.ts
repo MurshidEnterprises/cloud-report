@@ -15,6 +15,7 @@ export class AuditLogsAnalyzer extends BaseAnalyzer {
         audit_logs.what = "Are audit logs enabled for RedShift clusters?";
         audit_logs.why = "Audit logs contains information about connection requests and queries";
         audit_logs.recommendation = "Recommended to enable AuditLogs for all RedShift clusters";
+        audit_logs.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allAuditLogs) {
             const regionAuditLogs = allAuditLogs[region];

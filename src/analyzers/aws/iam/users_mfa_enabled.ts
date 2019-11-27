@@ -16,6 +16,7 @@ export class UserAccountsMfaEnabledAnalyzer extends BaseAnalyzer {
         user_accounts_mfa_enabled.why = `It is important to delete unused or unneeded
         access keys as it reduces risk of misusing them`;
         user_accounts_mfa_enabled.recommendation = "Recommended to delete unused user access keys regularly";
+        user_accounts_mfa_enabled.benchmark = ['all','cis'];
         const analysis: IResourceAnalysisResult[] = userCredentials.map((credential) => {
             const user_account_mfa_enabled: IResourceAnalysisResult = {};
             user_account_mfa_enabled.resource = credential;

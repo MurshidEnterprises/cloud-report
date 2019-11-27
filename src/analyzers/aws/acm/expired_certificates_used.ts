@@ -16,6 +16,7 @@ export class ExpiredCertificatesUsedAnalyzer extends BaseAnalyzer {
         expired_certificates_used.why = `Expired certificates can make services
         inaccessible for your customers so they shouldn't used`;
         expired_certificates_used.recommendation = `Recommended to remove the expired certificates from usage`;
+        expired_certificates_used.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allCertificates) {
             allRegionsAnalysis[region] = [];

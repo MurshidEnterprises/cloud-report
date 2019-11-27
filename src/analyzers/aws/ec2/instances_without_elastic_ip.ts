@@ -20,6 +20,7 @@ export class InstanceWithoutElasticIPAnalyzer extends BaseAnalyzer {
         replace the instance without losing the associated public IP`;
         instances_without_elastic_ip.recommendation = `Recommended to attach Elastic IP to EC2 instances which
         you are accessing via SSH or web application without a load balancer`;
+        instances_without_elastic_ip.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

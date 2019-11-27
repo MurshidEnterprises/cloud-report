@@ -14,6 +14,7 @@ export class DnsQueryLogsConfigAnalyzer extends BaseAnalyzer {
         dns_query_logs_enabled.why = `DNS query logs provides insights into who and how is
          the domain getting accessed and this helps to enable proper security controls`;
         dns_query_logs_enabled.recommendation = "It is recommended to enable query logs for all hosted zones.";
+        dns_query_logs_enabled.benchmark = ['all'];
         const allHostZonesAnalysis: IResourceAnalysisResult[] = [];
         const allHostZoneQueryLogsConfigMapByHostedZoneId = this.getHostZoneQueryLogsConfigMapByHostedZoneId(
             allHostZoneQueryLogsConfig);

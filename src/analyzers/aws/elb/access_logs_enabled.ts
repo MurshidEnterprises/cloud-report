@@ -15,6 +15,7 @@ export class AccessLogsEnabledAnalyzer extends BaseAnalyzer {
         access_logs_enabled.what = "Are access logs enabled for Load balancers?";
         access_logs_enabled.why = "Access logs helps us to understand request patterns also helps to detect threats";
         access_logs_enabled.recommendation = "Recommended to enable access logs for all public facing load balancers";
+        access_logs_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allElbsAttributes) {
             const regionElbsAttributes = allElbsAttributes[region];

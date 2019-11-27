@@ -17,6 +17,7 @@ export class LambdaFunctionVersionsCountAnalyzer extends BaseAnalyzer {
         will be confusing and also there is chance of exceed Lambda
         service limits so we need to keep deleting the old versions.`;
         function_versions_count.recommendation = "Recommended to keep maximum of 5 versions per Lambda function";
+        function_versions_count.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allFunctionVersions) {
             const regionFunctionVersions = allFunctionVersions[region];

@@ -19,6 +19,7 @@ export class SQSQueueSizeAlarmAnalyzer extends BaseAnalyzer {
         the consumers are failing to process the messages from queue then we will get notified`;
         sqs_queue_size_alarm.recommendation = `Recommended to set alarms
         for SQS Queue size to take appropriative action.`;
+        sqs_queue_size_alarm.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allQueueUrls) {
             const regionQueues = allQueueUrls[region];

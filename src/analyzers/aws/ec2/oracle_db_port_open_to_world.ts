@@ -15,6 +15,7 @@ export class OraclePortOpenToWorldAnalyzer extends BaseAnalyzer {
         oracle_db_port_open_to_world.why = "We should always restrict Oracle port only intended parties to access";
         oracle_db_port_open_to_world.recommendation = `Recommended to restrict Oracle
         port in security groups to specific IPs`;
+        oracle_db_port_open_to_world.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSecurityGroups) {
             const regionSecurityGroups = allSecurityGroups[region];

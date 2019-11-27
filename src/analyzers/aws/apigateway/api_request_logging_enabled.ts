@@ -19,6 +19,7 @@ export class ApiRequestLogsAnalyzer extends BaseAnalyzer {
         api_logs_enabled.why = "Logging request and response helps to debug APIs better";
         api_logs_enabled.recommendation = `Recommended to enable logs for all Apis which doesn't handle
         sensitive data as we can't log sensitive information in logs`;
+        api_logs_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allApis) {
             const regionApis = allApis[region];

@@ -17,6 +17,7 @@ export class SecurityGroupsUnusedAnalyzer extends BaseAnalyzer {
         security_groups_unused.what = "Are there any security groups unused?";
         security_groups_unused.why = "Unused security groups causes confusion and allows to make mistakes";
         security_groups_unused.recommendation = "Recommended delete unused security groups";
+        security_groups_unused.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

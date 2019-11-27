@@ -16,6 +16,7 @@ export class LambdaDeadLetterQueueAnalyzer extends BaseAnalyzer {
         dead_letter_queue_configured.why = `When we configure DLQ then Lambda function will pushes
         all the failure events into the queue for further investigation.`;
         dead_letter_queue_configured.recommendation = "Recommended to configure DLQ for all the Lambda functions";
+        dead_letter_queue_configured.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allFunctions) {
             const regionFunctions = allFunctions[region];

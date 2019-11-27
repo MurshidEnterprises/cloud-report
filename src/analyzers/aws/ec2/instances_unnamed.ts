@@ -16,6 +16,7 @@ export class InstancesUnnamedAnalyzer extends BaseAnalyzer {
         unnamed_instances.what = "Are there any EC2 instances without Name tags";
         unnamed_instances.why = "Tags help to follow security practices easily";
         unnamed_instances.recommendation = "Recommended to add Name tag to all instances";
+        unnamed_instances.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

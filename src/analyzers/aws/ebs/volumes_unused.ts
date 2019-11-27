@@ -18,6 +18,7 @@ export class VolumesUsageAnalyzer extends BaseAnalyzer {
         take snapshot and deleted the unused volumes`;
         volumes_unused.recommendation = `Recommended to delete unused EBS volumes
         once snapshot is taken incase if there will be need for that data later`;
+        volumes_unused.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allVolumes) {
             const regionVolumes = allVolumes[region];

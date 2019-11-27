@@ -13,6 +13,7 @@ export class BucketLifeCycleRulesAnalyzer extends BaseAnalyzer {
         bucket_life_cycle_rules_used.why = `Bucket life cycle rules helps us to manage the S3 object storage by either
         transferring objects to cheaper storage class or deleting them.`;
         bucket_life_cycle_rules_used.recommendation = "Recommended to configure life cycle rules for all buckets";
+        bucket_life_cycle_rules_used.benchmark = ['all'];
         const allBucketsAnalysis: IResourceAnalysisResult[] = [];
         for (const bucketName in allBucketLifeCycleRules) {
             const bucket_analysis: IResourceAnalysisResult = {};

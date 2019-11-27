@@ -22,6 +22,7 @@ export class EC2InstanceCPUUtilizationAlarmsAnalyzer extends BaseAnalyzer {
         when utilization is high then the application performance will be degraded.`;
         ec2_instance_cpu_utilization_alarms.recommendation = `Recommended to set alarm for EC2 CPU
         utilization to take appropriative action.`;
+        ec2_instance_cpu_utilization_alarms.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

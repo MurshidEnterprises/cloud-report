@@ -19,6 +19,7 @@ export class EC2VolumeDeleteProtectionOnTerminationAnalyzer extends BaseAnalyzer
         lost when they are without deletion protection for volumes`;
         volume_delete_protection_enabled.recommendation = `Recommended to enable deletion
         protection for volumes attached to all production critical instances`;
+        volume_delete_protection_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

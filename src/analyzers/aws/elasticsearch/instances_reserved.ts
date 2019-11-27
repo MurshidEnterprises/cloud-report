@@ -17,6 +17,7 @@ export class ESInstancesReservationAnalyzer extends BaseAnalyzer {
         instances_reserved.why = `You can reserve the Elasticsearch Service domain
         which are you going to run for long time to save the cost.`;
         instances_reserved.recommendation = "Recommended to reserve all long running instances";
+        instances_reserved.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allDomains) {
             const regionDomains = allDomains[region];

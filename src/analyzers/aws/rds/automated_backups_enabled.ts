@@ -16,6 +16,7 @@ export class RdsAutomatedBackupsEnabledAnalyzer extends BaseAnalyzer {
         automated_backups_enabled.why = `It is important to enabled automated backups so that incase of
         hardware failures and accidental data loss, we can recover data.`;
         automated_backups_enabled.recommendation = "Recommended to enable automated backups for all RDS instances.";
+        automated_backups_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

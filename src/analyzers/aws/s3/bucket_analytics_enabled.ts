@@ -13,6 +13,7 @@ export class BucketAnalyticsAnalyzer extends BaseAnalyzer {
         bucket_analytics_enabled.why = `Bucket Analytics gives insights into how
         object are being accessed and using this information we can get life cycle rule to reduce cost.`;
         bucket_analytics_enabled.recommendation = "Recommended to enable Analytics for all buckets";
+        bucket_analytics_enabled.benchmark = ['all'];
         const allBucketsAnalysis: IResourceAnalysisResult[] = [];
         for (const bucketName in allBucketAnalyticsConfig) {
             const bucket_analysis: IResourceAnalysisResult = {};

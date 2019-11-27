@@ -5,6 +5,7 @@ export interface ICheckAnalysisResult {
     why?: string;
     what?: string;
     recommendation?: string;
+    benchmark?: string[];
     reference?: string;
     resourceKeys?: string[];
     type: CheckAnalysisType;

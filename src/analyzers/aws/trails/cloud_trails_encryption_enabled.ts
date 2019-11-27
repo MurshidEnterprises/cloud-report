@@ -15,6 +15,7 @@ export class CloudTrailsEncryptionAnalyzer extends BaseAnalyzer {
         cloud_trails_encryption_at_rest.what = "Are Cloud trails encrypted at rest?";
         cloud_trails_encryption_at_rest.why = "Critical data should always be encrypted at rest";
         cloud_trails_encryption_at_rest.recommendation = "Recommended to enable encryption at rest for CloudTrails";
+        cloud_trails_encryption_at_rest.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allTrails) {
             const regionTrails = allTrails[region];

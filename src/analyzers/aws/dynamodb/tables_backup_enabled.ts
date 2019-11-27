@@ -16,6 +16,7 @@ export class DynamoDBTablesBackupEnabledAnalyzer extends BaseAnalyzer {
         tables_backup_enabled.why = `DynamoDB can be accidentally deleted and
         data can be lost when tables are without backup enabled`;
         tables_backup_enabled.recommendation = "Recommended to enable backup for all production critical tables";
+        tables_backup_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allTablesBackupStatuses) {
             const regionTablesBackupStatuses = allTablesBackupStatuses[region];

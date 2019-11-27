@@ -17,6 +17,7 @@ export class NodeVersionCheckAnalyzer extends BaseAnalyzer {
         node_version_check.why = `We need to regularly check the node version for the function as the older version will lose compatibility
         some features of the function you are using.`;
         node_version_check.recommendation = `Keep a regular check on node updates to use all the features efficiently.`;
+        node_version_check.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allFunctions) {
             const regionFunctions = allFunctions[region];

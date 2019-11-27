@@ -18,6 +18,7 @@ export class DefaultFunctionTimeoutAnalyzer extends BaseAnalyzer {
         functions in order achieve desire performance.`;
         default_timeout_used_for_functions.recommendation = `Recommended to set proper
         timeout as per your requirements`;
+        default_timeout_used_for_functions.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allFunctions) {
             const regionFunctions = allFunctions[region];

@@ -18,6 +18,7 @@ export class RdsDeleteProtectionEnabledAnalyzer extends BaseAnalyzer {
         RDS instances, protects them from accidental deletion.`;
         delete_protection_enabled.recommendation = `Recommended to enable delete
          protection for all production RDS instances.`;
+        delete_protection_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

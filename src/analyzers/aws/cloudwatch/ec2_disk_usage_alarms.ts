@@ -20,6 +20,7 @@ export class EC2InstanceDiskUsageAlarmsAnalyzer extends BaseAnalyzer {
         suddenly your applications might be down.`;
         ec2_instance_disk_usage_alarms.recommendation = `Recommended to set alarm for
         Disks to take appropriative action.`;
+        ec2_instance_disk_usage_alarms.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

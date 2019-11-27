@@ -17,6 +17,7 @@ export class DashboardsUsageAnalyzer extends BaseAnalyzer {
         dashboards help us to quickly glance at these graphs`;
         dashboards_used.recommendation = `Recommended to use dashboards for various important
         metrics such as Errors, Latency and CPU Utilization etc`;
+        dashboards_used.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allDashboards) {
             const regionDashboards = allDashboards[region];

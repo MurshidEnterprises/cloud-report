@@ -21,6 +21,7 @@ export class EC2InstanceMemoryUsageAlarmsAnalyzer extends BaseAnalyzer {
         suddenly your applications might be running slower.`;
         ec2_instance_memory_usage_alarms.recommendation = `Recommended to set alarm for RAM (Memory)
         of EC2 instances to take appropriative action.`;
+        ec2_instance_memory_usage_alarms.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

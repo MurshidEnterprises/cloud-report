@@ -18,6 +18,7 @@ export class VisibilityTimeoutAnalyzer extends BaseAnalyzer {
         while they are being processed; this will have performance impact.`;
         low_visibility_timeout.recommendation = `Recommended to set VisibilityTimeout
         higher than the maximum processing time of the messages`;
+        low_visibility_timeout.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allQueuess) {
             const regionQueuess = allQueuess[region];

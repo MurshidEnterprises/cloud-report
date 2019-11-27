@@ -17,6 +17,7 @@ export class LambdaErrorsAlarmAnalyzer extends BaseAnalyzer {
         lambda_errors_alarm.why = `It is important to set Errors alarm for all Lambda functions so
         that when Lambda functions are failing we will be notified.`;
         lambda_errors_alarm.recommendation = "Recommended to set errors alarm for all Lambda functions.";
+        lambda_errors_alarm.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allLambdaFunctions) {
             const regionLambdaFunctions = allLambdaFunctions[region];

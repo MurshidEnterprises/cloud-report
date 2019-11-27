@@ -13,6 +13,7 @@ export class CloudTrailsBucketAccessLogsAnalyzer extends BaseAnalyzer {
         const bucket_access_logs: ICheckAnalysisResult = { type: CheckAnalysisType.Security };
         bucket_access_logs.what = "Are access logs enabled for buckets containing Cloud Trails?";
         bucket_access_logs.recommendation = "Recommended to enable access logs for buckets containing Cloud Trails";
+        bucket_access_logs.benchmark = ['all'];
         const allBucketsAnalysis: IResourceAnalysisResult[] = [];
         const cloudTrailBuckets = this.getCloudTrailBuckets(allCloudTrails);
         for (const bucketName of cloudTrailBuckets) {

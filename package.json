@@ -1,6 +1,6 @@
 {
-  "name": "cloud-reports",
-  "version": "1.0.12",
+  "name": "cloud-report",
+  "version": "1.0.0",
   "description": "Collects and analyzes cloud resources",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,7 +15,7 @@
     "aws",
     "cloud",
     "security",
-    "reports",
+    "report",
     "scans"
   ],
   "author": "admin@MurshidEnterprises.com",

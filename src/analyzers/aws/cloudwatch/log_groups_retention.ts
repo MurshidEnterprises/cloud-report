@@ -16,6 +16,7 @@ export class LogGroupsRetentionAnalyzer extends BaseAnalyzer {
         log_groups_retention.why = `It is important to set proper retention for CloudWatch log
         groups as it is very costly to keep these logs forever`;
         log_groups_retention.recommendation = "Recommended to set retention for all the CloudWatch log groups";
+        log_groups_retention.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allLogGroups) {
             const regionLogGroups = allLogGroups[region];

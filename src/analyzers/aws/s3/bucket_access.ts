@@ -15,6 +15,7 @@ export class BucketAccessAnalyzer extends BaseAnalyzer {
         bucket_access.what = "Are there any buckets with open access to everyone?";
         bucket_access.why = "Generally buckets shouldn't allow open access unless there is good usecase";
         bucket_access.recommendation = "Recommended to keep bucket acl as restrictive as possible for the business";
+        bucket_access.benchmark = ['all'];
         const allBucketsAnalysis: IResourceAnalysisResult[] = [];
 
         for (const bucketName in allBucketAcls) {

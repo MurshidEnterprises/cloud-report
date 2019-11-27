@@ -17,6 +17,7 @@ export class CloudTrailsGlobalEventsAnalyzer extends BaseAnalyzer {
         track of events from global service like IAM`;
         cloud_trails_global_service_events.recommendation = `Recommended to enable
         IncludeGlobalServiceEvents for CloudTrails`;
+        cloud_trails_global_service_events.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allTrails) {
             const regionTrails = allTrails[region];

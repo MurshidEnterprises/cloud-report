@@ -16,6 +16,7 @@ export class ElasticIPsUsageAnalyzer extends BaseAnalyzer {
         elastic_ips_unused.what = "Are there any elastic IPs unused?";
         elastic_ips_unused.why = "Elastic IPs are not free so we shouldn't keep unused IPs";
         elastic_ips_unused.recommendation = "Recommended delete unused elastic IPs";
+        elastic_ips_unused.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allElasticIPs) {
             const regionElasticIPs = allElasticIPs[region];

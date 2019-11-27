@@ -21,6 +21,7 @@ export class VolumeSnapshotsRegularityAnalyzer extends BaseAnalyzer {
         volume_snapshots_regularity.why = `If we take regular snapshots of EBS volumes
         then it prevents data loss incase of volume failure or accidental deletes`;
         volume_snapshots_regularity.recommendation = "Recommended to take regular snapshots for all in-use volumes";
+        volume_snapshots_regularity.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allVolumes) {
             const regionVolumes = allVolumes[region];

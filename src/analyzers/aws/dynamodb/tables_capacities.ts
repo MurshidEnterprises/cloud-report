@@ -16,6 +16,7 @@ export class DynamoDBTablesCapacitiesAnalyzer extends BaseAnalyzer {
         tables_capacities.why = `DynamoDB table capacities effect both
         performance and cost so we need to review them regularly`;
         tables_capacities.recommendation = "Recommended to review DynamoDB table capacities at least once in a month";
+        tables_capacities.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allTablesDetails) {
             const regionTablesDetails = allTablesDetails[region];

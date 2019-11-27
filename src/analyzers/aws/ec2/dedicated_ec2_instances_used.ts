@@ -19,6 +19,7 @@ export class DedicatedTenUsedEC2InstancesAnalyzer extends BaseAnalyzer {
         dedicated_ec2_used.why = "Dedicated ec2 are open to world by dedicated and requires extra setup make them secure";
         dedicated_ec2_used.recommendation = `Recommended not to use dedicated ec2 instead create a custom one
         as they make you better understand the security posture`;
+        dedicated_ec2_used.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

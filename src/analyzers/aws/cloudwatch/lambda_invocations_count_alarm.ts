@@ -22,6 +22,7 @@ export class LambdaInvocationsCountAlarmAnalyzer extends BaseAnalyzer {
         triggered continuously in a loop and eventually you will get a huge AWS bill.`;
         lambda_invocations_count_alarm.recommendation = `Recommended to set invocation
         alarm for all the Lambda functions.`;
+        lambda_invocations_count_alarm.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allLambdaFunctions) {
             const regionLambdaFunctions = allLambdaFunctions[region];

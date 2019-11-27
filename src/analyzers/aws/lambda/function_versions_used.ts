@@ -17,6 +17,7 @@ export class LambdaFunctionVersioningUsageAnalyzer extends BaseAnalyzer {
         when every we update the function, it is important that we create a new version and make
          changes there so that if required we can roll back to previous version.`;
         function_versions_used.recommendation = "Recommended to use versioning while deploying the Lambda functions";
+        function_versions_used.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allFunctionVersions) {
             const regionFunctionVersions = allFunctionVersions[region];

@@ -19,6 +19,7 @@ export class ApiMetricsAnalyzer extends BaseAnalyzer {
         api_metrics_enabled.why = `Enabling metrics will help APIs to monitor API stages caching, 
         latency and detected errors at a more granular level and set alarms accordingly.`;
         api_metrics_enabled.recommendation = `Recommended to enable metrics for all Apis.`;
+        api_metrics_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allApis) {
             const regionApis = allApis[region];

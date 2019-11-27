@@ -19,6 +19,7 @@ export class RDSInstanceStorageAlarmAnalyzer extends BaseAnalyzer {
         there is no storage then the application will stop working.`;
         rds_instances_storage_alarm.recommendation = `Recommended to set
         alarms for RDS Storage to take appropriative action.`;
+        rds_instances_storage_alarm.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

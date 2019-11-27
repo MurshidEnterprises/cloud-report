@@ -19,6 +19,7 @@ export class TopicsWithoutSubscriptionsAnalyzer extends BaseAnalyzer {
         mistakenly we might be publishing to them but no one will receive them`;
         topics_without_subscriptions.recommendation = `Every SNS topic should have
         proper subscriptions else you should remove it`;
+        topics_without_subscriptions.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allTopics) {
             const regionTopics = allTopics[region];

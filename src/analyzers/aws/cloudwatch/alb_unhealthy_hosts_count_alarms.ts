@@ -19,6 +19,7 @@ export class AlbUnHealthyHostAlarmsAnalyzer extends BaseAnalyzer {
         performance of the application will be degraded`;
         alb_unhealthy_hosts_alarms.recommendation = `Recommended to set alarm for
         Unhealthy hosts to take appropriative action.`;
+        alb_unhealthy_hosts_alarms.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allELBs) {
             const regionELBs = allELBs[region];

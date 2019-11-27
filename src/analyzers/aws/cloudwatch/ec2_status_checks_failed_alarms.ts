@@ -22,6 +22,7 @@ export class EC2InstanceSystemChecksAlarmsAnalyzer extends BaseAnalyzer {
         otherwise suddenly your applications might be down.`;
         ec2_instance_system_checks_alarms.recommendation = `Recommended to set alarm for EC2
         system checks to take appropriative action.`;
+        ec2_instance_system_checks_alarms.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

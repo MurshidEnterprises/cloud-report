@@ -16,6 +16,7 @@ export class InstanceUntaggedAnalyzer extends BaseAnalyzer {
         untagged_instances.what = "Are there EC2 any instances without tags?";
         untagged_instances.why = "Tags help to follow security practices easily";
         untagged_instances.recommendation = "Recommended to add tags to all instances";
+        untagged_instances.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

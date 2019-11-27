@@ -18,6 +18,7 @@ export class TracingAnalyzer extends BaseAnalyzer {
          operating your functions as the X-Ray service support allows you to rapidly diagnose errors, 
          identify bottlenecks, slowdowns and timeouts by breaking down the latency for your Lambda functions.`;
         tracing_mode_functions.recommendation = `Recommended to enable tracing so that AWS X-Ray can be enabled.`;
+        tracing_mode_functions.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allFunctions) {
             const regionFunctions = allFunctions[region];

@@ -18,6 +18,7 @@ export class InstanceVolumeSnapshotAnalyzer extends BaseAnalyzer {
         instances_volume_snapshot.why = `If we take regular snapshots of EBS volumes
         then it prevents data loss incase of volume failure or accidental deletes`;
         instances_volume_snapshot.recommendation = "Recommended to take regular snapshots for all in-use volumes";
+        instances_volume_snapshot.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

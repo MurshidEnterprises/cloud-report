@@ -20,6 +20,7 @@ export class CloudFront5xxAlarmsAnalyzer extends BaseAnalyzer {
          you won't be aware when the application is failing.`;
         distribution_5xx_errors_alarms.recommendation = `Recommended to set alarm
         for 5XX Errors to take appropriative action.`;
+        distribution_5xx_errors_alarms.benchmark = ['all'];
         const allDistributionsAnalysis: IResourceAnalysisResult[] = [];
         for (const distribution of allDistributions) {
             const alarms = allAlarms["us-east-1"];

@@ -16,6 +16,7 @@ export class PostgreSQLPortOpenToWorldAnalyzer extends BaseAnalyzer {
         port only intended parties to access`;
         postgre_sql_db_port_open_to_world.recommendation = `Recommended to restrict PostgreSQL
         port in security groups to specific IPs`;
+        postgre_sql_db_port_open_to_world.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSecurityGroups) {
             const regionSecurityGroups = allSecurityGroups[region];

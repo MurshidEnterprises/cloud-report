@@ -16,6 +16,7 @@ export class CloudTrailsEnabledAnalyzer extends BaseAnalyzer {
         cloud_trails_enabled.why = `Cloud trails helps understand who did what
         and this is utmost important when a security breach happens`;
         cloud_trails_enabled.recommendation = "Recommended to enable cloud trails for all regions";
+        cloud_trails_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allTrails) {
             const regionTrails = allTrails[region];
