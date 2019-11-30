@@ -20,6 +20,9 @@
   ],
   "author": "admin@MurshidEnterprises.com",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "devDependencies": {
     "@types/core-js": "^2.5.0",
     "@types/node": "^10.17.4",
@@ -36,12 +39,13 @@
     "puppeteer": "^2.0.0"
   },
   "dependencies": {
+    "chrome-aws-lambda": "^2.0.0",
+    "cpy": "^7.0.1",
+    "create-npmrc": "^2.0.2",
     "ejs": "^2.6.1",
     "extend": ">=3.0.2",
     "flat": "^4.0.0",
     "moment": "^2.22.2",
-    "chrome-aws-lambda": "^2.0.0",
-    "puppeteer-core": "^2.0.0",
-    "cpy": "^7.0.1"
+    "puppeteer-core": "^2.0.0"
   }
 }
