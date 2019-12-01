@@ -44,19 +44,19 @@ We are implementing checks based on [AWS Well Architected](https://aws.amazon.co
 
 ### Install NodeJS
 This package is based on NodeJS framework so you can it install from [here](https://nodejs.org/en/).
-### Installing cloud-reports from source
+### Installing cloud-report from source
 #### Download
 
     git clone https://github.com/MurshidEnterprises/cloud-report.git
 
 #### To get updates
-If you have already cloned this repository before then for getting new updates, change directory to the cloud-reports directory and then do git pull.
+If you have already cloned this repository before then for getting new updates, change directory to the cloud-report directory and then do git pull.
 ```
 git pull
 ```
 
 #### Installing and Building
-*Make sure you are in the cloud-reports directory.*
+*Make sure you are in the cloud-report directory.*
 
 To convert typescript to javascript
 
@@ -117,14 +117,14 @@ When we are working on analyzers, we will be testing them multiple times and eve
 npm run scan -- --profile Your-AWS-profile  -f pdf -d -u
 ```
 ### Install as npm module to an existing package
-#### Install cloud-reports npm module
+#### Install cloud-report npm module
 ```
-npm install -S cloud-reports
+npm install -S cloud-report
 ```
 #### Usage
 Make sure you have initialized [AWS.config](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/global-config-object.html), otherwise this will use default AWS profile.
 ```js
-    const cloudReporter = require('cloud-reports');
+    const cloudReporter = require('cloud-report');
     // To collect for all modules
     const collectionPromise = cloudReporter.collect()
     // To collect for specific modules
@@ -136,7 +136,7 @@ Make sure you have initialized [AWS.config](https://docs.aws.amazon.com/sdk-for-
 #### Multiple credentials support
 You may want to run the report for multiple accounts with different set of credentials at once, then in that case you can pass different credentials to collect method.
 ```js
-    const cloudReporter = require('cloud-reports');
+    const cloudReporter = require('cloud-report');
     const account1CollectionPromise = cloudReporter.collect(all, credentials1);
     const account2CollectionPromise = cloudReporter.collect(all, credentials2);
 
