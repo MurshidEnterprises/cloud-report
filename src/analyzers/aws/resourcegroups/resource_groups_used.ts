@@ -17,7 +17,7 @@ export class ResourceGroupsUsageAnalyzer extends BaseAnalyzer {
         using Tags like Department, team, project etc`;
         resource_groups_used.recommendation = `Recommended use Resource groups to track and monitor
         the AWS resources for better management of AWS services`;
-        resource_groups_used.benchmark = ['all'];
+        resource_groups_used.benchmark = ['all','hippa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allResourceGroups) {
             const regionResourceGroups = allResourceGroups[region];

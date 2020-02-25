@@ -16,7 +16,7 @@ export class RdsEncryptionEnabledAnalyzer extends BaseAnalyzer {
         encryption_enabled.why = "It is important to encrypt data at rest";
         encryption_enabled.recommendation = `Recommended to enable encryption for
         RDS instance as it provides additional layer of security`;
-        encryption_enabled.benchmark = ['all'];
+        encryption_enabled.benchmark = ['all','hippa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

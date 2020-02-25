@@ -18,7 +18,7 @@ export class UsersAccessKeysOldAnalyzer extends BaseAnalyzer {
         users_access_keys_old.what = "Are user access keys are too old?";
         users_access_keys_old.why = "It is important to rotate access keys regularly as it will reduce improper use";
         users_access_keys_old.recommendation = "Recommended to rotate user access keys regularly";
-        users_access_keys_old.benchmark = ['all','cis'];
+        users_access_keys_old.benchmark = ['all','cis','hippa'];
         const allUsersAccessKeysAnalysis: IResourceAnalysisResult[] = [];
         userCredentials.forEach((credential) => {
             const user_access_keys_old: IResourceAnalysisResult = {};

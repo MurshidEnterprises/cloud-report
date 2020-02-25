@@ -18,7 +18,7 @@ export class DedicatedVpcUsedEC2InstancesAnalyzer extends BaseAnalyzer {
         dedicated_vpcs_used.what = "Are there any dedicated vpc used for EC2 instances?";
         dedicated_vpcs_used.why = "Dedicated vpc are safe and secure and can only be accessed by person who is assigned to it.";
         dedicated_vpcs_used.recommendation = `Recommended to use Dedicated vpc.`;
-        dedicated_vpcs_used.benchmark = ['all'];
+        dedicated_vpcs_used.benchmark = ['all','hippa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

@@ -18,7 +18,7 @@ export class InstanceProfilesUsageAnalyzer extends BaseAnalyzer {
         roles for granting EC2 instances access to other AWS resources`;
         instance_profiles_used.recommendation = `Recommended to assign IAM instance profile to
         EC2 instances instead of hard coding IAM credentials`;
-        instance_profiles_used.benchmark = ['all','cis'];
+        instance_profiles_used.benchmark = ['all','cis','hippa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

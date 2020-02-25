@@ -14,7 +14,7 @@ export class SSHPortOpenToWorldAnalyzer extends BaseAnalyzer {
         ssh_port_open_to_world.what = "Is SSH port open to world?";
         ssh_port_open_to_world.why = "We should always restrict SSH port only intended parties to access";
         ssh_port_open_to_world.recommendation = "Recommended to restrict SSH port in security groups to specific IPs";
-        ssh_port_open_to_world.benchmark = ['all'];
+        ssh_port_open_to_world.benchmark = ['all','hippa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSecurityGroups) {
             const regionSecurityGroups = allSecurityGroups[region];

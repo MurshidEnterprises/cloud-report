@@ -17,7 +17,7 @@ export class RdsPubliclyAccessibleAnalyzer extends BaseAnalyzer {
         publicly_accessible.why = `It is important to restrict
         RDS instances for private access only for most of the usecases`;
         publicly_accessible.recommendation = "Recommended to disable public access for RDS instances";
-        publicly_accessible.benchmark = ['all'];
+        publicly_accessible.benchmark = ['all','hippa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];
