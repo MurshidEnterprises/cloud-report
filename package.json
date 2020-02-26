@@ -1,5 +1,5 @@
 {
-  "name": "cloudcops-report",
+  "name": "cloud-report",
   "version": "1.0.2",
   "description": "Collects and analyzes cloud resources",
   "main": "./dist/index.js",
