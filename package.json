@@ -1,6 +1,10 @@
 {
   "name": "cloud-report",
+  "version": "1.1.1",
   "description": "Collects and analyzes cloud resources",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
     "build": "npm install && npm run copy-ejs && tsc && cd src/reporters/html && npm install && npm run ng build --  --prod && cd ../../..",
     "compile": "tsc",
     "scan": "node dist/scan.js",
