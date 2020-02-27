@@ -4,41 +4,41 @@ import {
 } from "../../../types";
 import { BaseAnalyzer } from "../../base";
 
-export class AuditLogsAnalyzer extends BaseAnalyzer {
+export class RedshiftEncryptionAnalyzer extends BaseAnalyzer {
 
     public analyze(params: any, fullReport?: any): any {
-        const allAuditLogs = params.audit_logs;
-        if (!allAuditLogs) {
+        const allClusters = params.redshift_clusters;
+        if (!allClusters) {
             return undefined;
         }
-        const audit_logs: ICheckAnalysisResult = { type: CheckAnalysisType.Security };
-        audit_logs.what = "Are audit logs enabled for RedShift clusters?";
-        audit_logs.why = "Audit logs contains information about connection requests and queries";
-        audit_logs.recommendation = "Recommended to enable AuditLogs for all RedShift clusters";
-        audit_logs.benchmark = ['all'];
+        const encryption_redshift_clusters: ICheckAnalysisResult = { type: CheckAnalysisType.Security };
+        encryption_redshift_clusters.what = "Is encryption enabled for RedShift clusters?";
+        encryption_redshift_clusters.why = "Data at rest should always be encrypted";
+        encryption_redshift_clusters.recommendation = "Recommended to enable encryption for Redshift Clusters";
+        encryption_redshift_clusters.benchmark = ['all', 'hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
-        for (const region in allAuditLogs) {
-            const regionAuditLogs = allAuditLogs[region];
+        for (const region in allClusters) {
+            const regionClusters = allClusters[region];
             allRegionsAnalysis[region] = [];
-            for (const clusterIdentifier in regionAuditLogs) {
-                const audit_log_analysis: IResourceAnalysisResult = {};
-                const auditLog = regionAuditLogs[clusterIdentifier];
-                audit_log_analysis.resource = { clusterIdentifier, auditLog };
-                audit_log_analysis.resourceSummary = {
-                    name: "Cluster", value: clusterIdentifier,
+            for (const clusterIdentifier of regionClusters) {
+                const cluster_encryption_analysis: IResourceAnalysisResult = {};
+                const cluster = clusterIdentifier;
+                cluster_encryption_analysis.resource = cluster;
+                cluster_encryption_analysis.resourceSummary = {
+                    name: "Cluster", value: cluster
                 };
-                if (auditLog && auditLog.LoggingEnabled) {
-                    audit_log_analysis.severity = SeverityStatus.Good;
-                    audit_log_analysis.message = "Audit log is enabled";
+                if (cluster.Encrypted) {
+                    cluster_encryption_analysis.severity = SeverityStatus.Good;
+                    cluster_encryption_analysis.message = "Encryption enabled";
                 } else {
-                    audit_log_analysis.severity = SeverityStatus.Failure;
-                    audit_log_analysis.message = "Audit log is not enabled";
-                    audit_log_analysis.action = "Enable audit log for cluster";
+                    cluster_encryption_analysis.severity = SeverityStatus.Warning;
+                    cluster_encryption_analysis.message = "Encryption not enabled";
+                    cluster_encryption_analysis.action = "Enable encryption at rest";
                 }
-                allRegionsAnalysis[region].push(audit_log_analysis);
+                allRegionsAnalysis[region].push(cluster_encryption_analysis);
             }
         }
-        audit_logs.regions = allRegionsAnalysis;
-        return { audit_logs };
+        encryption_redshift_clusters.regions = allRegionsAnalysis;
+        return { encryption_redshift_clusters };
     }
 }
