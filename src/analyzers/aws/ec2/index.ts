@@ -20,3 +20,4 @@ export * from "./ssh_port_open_to_world";
 export * from "./termination_protection_enabled";
 export * from "./volume_delete_protection_enabled";
 export * from "./instances_volume_snapshot"
+export * from "./volumes_encryption";

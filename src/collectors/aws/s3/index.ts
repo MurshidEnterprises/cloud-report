@@ -4,3 +4,4 @@ export * from "./bucket_analytics";
 export * from "./bucket_life_cycle_rules";
 export * from "./bucket_versioning";
 export * from "./buckets";
+export * from "./bucket_encryption";
