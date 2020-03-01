@@ -19,4 +19,5 @@ export import sns = require("./sns");
 export import sqs = require("./sqs");
 export import trails = require("./trails");
 export import vpc = require("./vpc");
-export import kinesis =require("./kinesis");
+export import kinesis = require("./kinesis");
+export import efs = require("./efs");
