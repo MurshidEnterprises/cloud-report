@@ -10,21 +10,28 @@ export class StreamEncryptionCollector extends BaseCollector {
     }
 
     private async listAllStreamEncryption() {
-        const kinesis = this.getClient("Kinesis", "us-east-1") as AWS.Kinesis;
+        const serviceName = "Kinesis";
         const kinesisStreamCollector = new KinesisStreamCollector();
         kinesisStreamCollector.setSession(this.getSession());
         const kinesis_encryption = {};
+        const streamData = await CollectorUtil.cachedCollect(kinesisStreamCollector);
+
         try {
-            const streamData = await CollectorUtil.cachedCollect(kinesisStreamCollector);
-            for (const stream of streamData.streams) {
-                try {
-                    const kinesisStreamData: AWS.Kinesis.DescribeStreamOutput =
-                        await kinesis.describeStream({ StreamName: stream }).promise();
-                    kinesis_encryption[stream] = kinesisStreamData.StreamDescription;
-                } catch (error) {
-                    AWSErrorHandler.handle(error);
+            for (const region in streamData.streams) {
+                kinesis_encryption[region] = [];
+                const kinesis = this.getClient(serviceName, region) as AWS.Kinesis;
+                for (const stream of streamData.streams[region]) {
+                    try {
+                        const kinesisStreamData: AWS.Kinesis.DescribeStreamOutput =
+                            await kinesis.describeStream({ StreamName: stream }).promise();
+                        let obj = {};
+                        obj[stream] = kinesisStreamData.StreamDescription;
+                        kinesis_encryption[region].push(obj);
+                    } catch (error) {
+                        AWSErrorHandler.handle(error);
+                    }
+                    await CommonUtil.wait(200);
                 }
-                await CommonUtil.wait(200);
             }
         } catch (error) {
             AWSErrorHandler.handle(error);

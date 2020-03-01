@@ -9,9 +9,14 @@ export class KinesisStreamCollector extends BaseCollector {
 
     private async listAllKinesisStream() {
         try {
-            const kinesis = this.getClient("Kinesis", "us-east-1") as AWS.Kinesis;
-            const kinesisStreamData: AWS.Kinesis.ListStreamsOutput = await kinesis.listStreams().promise();
-            const streams = kinesisStreamData.StreamNames;
+            const serviceName = "Kinesis";
+            const kinesisRegions = this.getRegions(serviceName);
+            const streams = {};
+            for (const region of kinesisRegions) {
+                const kinesis = this.getClient(serviceName, region) as AWS.Kinesis;
+                const kinesisStreamData: AWS.Kinesis.ListStreamsOutput = await kinesis.listStreams().promise();
+                streams[region] = kinesisStreamData.StreamNames;
+            }
             return { streams };
         } catch (error) {
             AWSErrorHandler.handle(error);
