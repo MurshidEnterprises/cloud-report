@@ -18,7 +18,7 @@ export class SubnetsWithIgwRouteAnalyzer extends BaseAnalyzer {
         public and can become valnerable to attacks. Also sometimes we misconfigure private subnets with public routes.`;
         subnets_with_igw_route.recommendation = `Recommended to keep only private routes for private
         subnets and protect public subnets with network acls.`;
-        subnets_with_igw_route.benchmark = ['all','hippa'];
+        subnets_with_igw_route.benchmark = ['all','hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSubnets) {
             const regionSubnets = allSubnets[region];

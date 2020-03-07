@@ -14,7 +14,7 @@ export class RDPPortOpenToWorldAnalyzer extends BaseAnalyzer {
         rdp_port_open_to_world.what = "Is RDP port open to world?";
         rdp_port_open_to_world.why = "We should always restrict RDP port only intended parties to access";
         rdp_port_open_to_world.recommendation = "Recommended to restrict RDP port in security groups to specific IPs";
-        rdp_port_open_to_world.benchmark = ['all','hippa'];
+        rdp_port_open_to_world.benchmark = ['all','hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSecurityGroups) {
             const regionSecurityGroups = allSecurityGroups[region];

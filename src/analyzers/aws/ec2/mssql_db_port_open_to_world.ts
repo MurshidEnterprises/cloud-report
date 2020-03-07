@@ -15,7 +15,7 @@ export class MSSQLPortOpenToWorldAnalyzer extends BaseAnalyzer {
         mssql_db_port_open_to_world.why = "We should always restrict MSSQL port only intended parties to access";
         mssql_db_port_open_to_world.recommendation = `Recommended to restrict MSSQL
         port in security groups to specific IPs`;
-        mssql_db_port_open_to_world.benchmark = ['all','hippa'];
+        mssql_db_port_open_to_world.benchmark = ['all','hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSecurityGroups) {
             const regionSecurityGroups = allSecurityGroups[region];

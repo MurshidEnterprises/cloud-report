@@ -14,7 +14,7 @@ export class RolesWithoutExternalIDAnalyzer extends BaseAnalyzer {
         ExternalId for cross account role access`;
         cross_accounts_without_external_id.recommendation = `Recommended to use ExternalId for
         roles which give access to third party accounts`;
-        cross_accounts_without_external_id.benchmark = ['all','cis','hippa'];
+        cross_accounts_without_external_id.benchmark = ['all','cis','hipaa'];
         const analysis: IResourceAnalysisResult[] = [];
 
         permittedAccounts.forEach((roleAccountsObject) => {

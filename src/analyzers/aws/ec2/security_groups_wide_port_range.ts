@@ -15,7 +15,7 @@ export class SecurityGroupsWidePortRangeAnalyzer extends BaseAnalyzer {
         security_groups_wide_port_range.why = `Security group should not expose wide range of
         port as it will be valnerable for port scan attacks`;
         security_groups_wide_port_range.recommendation = "Recommended to expose only port used by application";
-        security_groups_wide_port_range.benchmark = ['all','hippa'];
+        security_groups_wide_port_range.benchmark = ['all','hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSecurityGroups) {
             const regionSecurityGroups = allSecurityGroups[region];

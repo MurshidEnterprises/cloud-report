@@ -19,7 +19,7 @@ export class DefaultVpcUsedEC2InstancesAnalyzer extends BaseAnalyzer {
         default_vpcs_used.why = "Default vpcs are open to world by default and requires extra setup make them secure";
         default_vpcs_used.recommendation = `Recommended not to use default vpc instead create a custom one
         as they make you better understand the security posture`;
-        default_vpcs_used.benchmark = ['all','hippa'];
+        default_vpcs_used.benchmark = ['all','hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allInstances) {
             const regionInstances = allInstances[region];

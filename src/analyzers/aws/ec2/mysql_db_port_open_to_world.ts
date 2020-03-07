@@ -15,7 +15,7 @@ export class MySQLPortOpenToWorldAnalyzer extends BaseAnalyzer {
         mysql_db_port_open_to_world.why = "We should always restrict MySQL port only intended parties to access";
         mysql_db_port_open_to_world.recommendation = `Recommended to restrict MySQL
         port in security groups to specific IPs`;
-        mysql_db_port_open_to_world.benchmark = ['all','hippa'];
+        mysql_db_port_open_to_world.benchmark = ['all','hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allSecurityGroups) {
             const regionSecurityGroups = allSecurityGroups[region];

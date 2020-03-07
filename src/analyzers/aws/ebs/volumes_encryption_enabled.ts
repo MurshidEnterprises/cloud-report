@@ -16,7 +16,7 @@ export class VolumesEncryptionEnabledAnalyzer extends BaseAnalyzer {
         volumes_encrypted_at_rest.what = "Are EBS volumes encrypted at rest?";
         volumes_encrypted_at_rest.why = "Data at rest should always be encrypted";
         volumes_encrypted_at_rest.recommendation = "Recommended to enable encryption for EBS volumes";
-        volumes_encrypted_at_rest.benchmark = ['all','hippa'];
+        volumes_encrypted_at_rest.benchmark = ['all','hipaa'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allVolumes) {
             const regionVolumes = allVolumes[region];

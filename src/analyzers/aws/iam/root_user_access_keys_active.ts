@@ -22,7 +22,7 @@ export class RootUserAccessKeysActiveAnalyzer extends BaseAnalyzer {
         root_user_access_keys_active.why = `Root user access keys are unrestrictable hence shouldn't be
         used as damage will be determental if they gets leaked`;
         root_user_access_keys_active.recommendation = "Recommended to delete and never user root user access keys";
-        root_user_access_keys_active.benchmark = ['all','cis','hippa']; 
+        root_user_access_keys_active.benchmark = ['all','cis','hipaa']; 
         const analysis: IResourceAnalysisResult = {};
         analysis.resource = credentials[rootUserIndex];
         analysis.resourceSummary = {
