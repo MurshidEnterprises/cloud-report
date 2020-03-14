@@ -10,7 +10,7 @@ export class PasswordPolicyAnalyzer extends BaseAnalyzer {
         password_policy.why = `It is important to have secure password policy as
         leaked or weak passwords can give direct access to attackers`;
         password_policy.recommendation = "Recommended to have secure password policy";
-        password_policy.benchmark = ['all','cis','hipaa'];
+        password_policy.benchmark = ['all','cis'];
         const analysis: IResourceAnalysisResult[] = [];
 
         if (!password_policy_report) {

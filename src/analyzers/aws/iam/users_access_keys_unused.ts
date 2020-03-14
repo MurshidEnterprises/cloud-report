@@ -18,7 +18,7 @@ export class UsersAccessKeysUnusedAnalyzer extends BaseAnalyzer {
         users_access_keys_unused.why = `It is important to delete unused or
         unneeded access keys as it reduces risk of misusing them`;
         users_access_keys_unused.recommendation = "Recommended to delete unused user access keys regularly";
-        users_access_keys_unused.benchmark = ['all','cis','hipaa'];
+        users_access_keys_unused.benchmark = ['all','cis'];
         const allUsersAccessKeysAnalysis: IResourceAnalysisResult[] = [];
         userCredentials.forEach((credential) => {
             const user_access_keys_unused: IResourceAnalysisResult = {};

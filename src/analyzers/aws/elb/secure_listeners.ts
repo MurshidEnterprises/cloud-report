@@ -17,7 +17,7 @@ export class SecureListenerAnalyzer extends BaseAnalyzer {
         secure_listeners.what = "Are there any Load balancers without secure(SSL/TSL) listeners?";
         secure_listeners.why = "Transmission of sensitive data to/from Load balancer should happen via secure listener";
         secure_listeners.recommendation = "Recommended to have secure listener and use them to transmit sensitive data";
-        secure_listeners.benchmark = ['all','hipaa'];
+        secure_listeners.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allElbs) {
             const regionElbs = allElbs[region];

@@ -16,7 +16,7 @@ export class DeletionProtectionEnabledAnalyzer extends BaseAnalyzer {
         deletion_protection_enabled.why = `Deletion protection should be enabled otherwise if
         you delete load balancer accidentally then it gets deleted permanently`;
         deletion_protection_enabled.recommendation = "Recommended to enable deletion protection for all load balancers";
-        deletion_protection_enabled.benchmark = ['all','hipaa'];
+        deletion_protection_enabled.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allElbsAttributes) {
             const regionElbsAttributes = allElbsAttributes[region];

@@ -15,7 +15,7 @@ export class ESDomainsOpenToWorldAnalyzer extends BaseAnalyzer {
         domains_open_to_world.why = `Domains open to world posses serious security
         threat so we need to allow only intended parties to access`;
         domains_open_to_world.recommendation = "Recommended to restrict domain access as per your application needs";
-        domains_open_to_world.benchmark = ['all','hipaa'];
+        domains_open_to_world.benchmark = ['all'];
         const allRegionsAnalysis: IDictionary<IResourceAnalysisResult[]> = {};
         for (const region in allDomains) {
             const regionDomains = allDomains[region];
