@@ -22,7 +22,7 @@ export class RootUserMfaEnabledAnalyzer extends BaseAnalyzer {
         root_user_mfa_enabled.why = `Root user should always use MFA when they login via AWS console as access
         can't be restricted so damage caused by leakage will be determental`;
         root_user_mfa_enabled.recommendation = "Recommended to enable MFA for root user";
-        root_user_mfa_enabled.benchmark = ['all','cis'];
+        root_user_mfa_enabled.benchmark = ['all','cis','hipaa'];
         const analysis: IResourceAnalysisResult = {};
         analysis.resource = credentials[rootUserIndex];
         analysis.resourceSummary = {
