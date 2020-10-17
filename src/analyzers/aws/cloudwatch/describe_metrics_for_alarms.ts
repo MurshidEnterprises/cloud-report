@@ -36,7 +36,7 @@ export class DescribeMetricsForAlarmsAnalyzer extends BaseAnalyzer {
                 }
                 else {
                     metricAnalysis.severity = SeverityStatus.Failure;
-                    metricAnalysis.message = "Log metrics are enabled";
+                    metricAnalysis.message = "Log metrics are not enabled";
                     metricAnalysis.action = "Create Log metrics for the identified metric";                    
                 }
                 allRegionsAnalysis[region].push(metricAnalysis);
