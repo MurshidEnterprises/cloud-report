@@ -44,7 +44,7 @@
     "create-npmrc": "^2.0.2",
     "ejs": "^2.6.1",
     "extend": ">=3.0.2",
-    "flat": "^4.0.0",
+    "flat": "^5.0.1",
     "moment": "^2.22.2",
     "puppeteer-core": "^2.0.0"
   }
